@@ -1,74 +1,236 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi página en GitHub Pages</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockClaro | Gestión de Inventarios de Alto Nivel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5fb4;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light-slate: #f8fafc;
+            --border: rgba(226, 232, 240, 0.8);
+        }
 
-    header {
-      background: #24292e;
-      color: white;
-      padding: 20px;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    main {
-      padding: 40px;
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+        /* --- Navegación --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
 
-    a {
-      color: #0366d6;
-      text-decoration: none;
-    }
+        .logo img { height: 50px; }
 
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+        .btn-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 160px 8% 100px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            background: radial-gradient(circle at 90% 10%, #eef6ff 0%, #ffffff 50%);
+        }
+
+        .hero-content { flex: 1; }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #475569;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* --- Visual & Elegance --- */
+        .hero-visual { flex: 1; position: relative; }
+
+        .dashboard-preview {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.15);
+            border: 1px solid var(--border);
+        }
+
+        /* Badge de Ahorro Elegante */
+        .saving-badge {
+            position: absolute;
+            top: -25px;
+            right: -10px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .saving-badge span { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+
+        /* --- Sección: Aliviar Frustraciones --- */
+        .solutions {
+            padding: 100px 8%;
+            background: var(--light-slate);
+        }
+
+        .solutions-header { text-align: center; margin-bottom: 70px; }
+        .solutions-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            border-color: var(--primary);
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .status-pill {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .pill-alivio { background: #dcfce7; color: #166534; }
+
+        .solution-card h3 { margin-bottom: 12px; font-size: 1.25rem; }
+        .solution-card p { color: #64748b; font-size: 0.95rem; }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+            .solutions-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Hola 👋</h1>
-    <p>Bienvenido a mi sitio en GitHub Pages</p>
-  </header>
+    <nav>
+        <div class="logo">
+            <img src="image_1c99f2.jpg" alt="StockClaro Logo">
+        </div>
+        <div class="nav-links">
+            <a href="https://wa.me/tu-numero" class="btn-cta">Hablar con un experto</a>
+        </div>
+    </nav>
 
-  <main>
-    <div class="card">
-      <h2>Sobre mí</h2>
-      <p>Este es un sitio web simple hecho con HTML y CSS.</p>
-    </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Controla tu inventario con información clara y confiable</h1>
+            <p>Deja atrás el caos de los registros manuales. Visualiza tu stock en tiempo real y optimiza cada compra con datos precisos.</p>
+            <a href="#soluciones" class="btn-cta" style="padding: 18px 36px; font-size: 1rem;">Explorar Solución</a>
+        </div>
 
-    <div class="card">
-      <h2>Proyectos</h2>
-      <p>Puedes agregar aquí tus proyectos o enlaces.</p>
-      <a href="https://github.com/">Mi GitHub</a>
-    </div>
-  </main>
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="dashboard-preview" alt="Dashboard StockClaro">
+            
+            <div class="saving-badge">
+                <div class="icon-box" style="margin:0; width:32px; height:32px;">📈</div>
+                <div>
+                    <p style="font-size: 0.7rem; color: #64748b; margin:0;">EFICIENCIA LOGÍSTICA</p>
+                    <span>+90% Detectado</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <footer>
-    © 2026 - Hecho con GitHub Pages
-  </footer>
+    <section class="solutions" id="soluciones">
+        <div class="solutions-header">
+            <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">Propuesta de Valor</span>
+            <h2>Adiós al error manual, hola a la precisión</h2>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="status-pill pill-alivio">Aliviador de Frustración</div>
+                <div class="icon-box">📊</div>
+                <h3>Adiós al Excel Caótico</h3>
+                <p>Centralizamos tus entradas y salidas en una interfaz intuitiva. Un solo lugar, toda la verdad.</p>
+            </div>
+
+            <div class="solution-card">
+                <div class="status-pill pill-alivio">Aliviador de Frustración</div>
+                <div class="icon-box">⚡</div>
+                <h3>Visibilidad en Tiempo Real</h3>
+                <p>Olvídate de revisar múltiples archivos. Tu stock se actualiza al instante con cada movimiento.</p>
+            </div>
+
+            <div class="solution-card">
+                <div class="status-pill pill-alivio">Aliviador de Frustración</div>
+                <div class="icon-box">🛡️</div>
+                <h3>Validación Automática</h3>
+                <p>Elimina el 100% de los errores de digitación manual con nuestro sistema de verificación inteligente.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 60px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid var(--border);">
+        &copy; 2026 StockClaro — Tu inventario bajo control.
+    </footer>
 
 </body>
 </html>
