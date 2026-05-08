@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
   <nav class="navbar">
     <div class="logo">
-      <img src="image_1c99f2.jpg" alt="StockClaro Logo" />
+      <img src="./image_1c99f2.jpg" alt="StockClaro Logo" />
     </div>
 
     <div class="nav-links">
@@ -46,32 +46,12 @@
         </div>
       </div>
 
-      <div class="browser-mockup">
-        <div class="browser-header">
-          <div class="browser-dot"></div>
-          <div class="browser-dot"></div>
-          <div class="browser-dot"></div>
-        </div>
-
-        <div class="browser-body">
-          <div class="mockup-card mockup-summary">
-            <div class="mockup-line small"></div>
-            <div class="mockup-line primary"></div>
-          </div>
-
-          <div class="mockup-grid">
-            <div class="mockup-card chart-card">
-              <div class="bar-chart">
-                <div class="bar accent"></div>
-                <div class="bar primary"></div>
-                <div class="bar slate"></div>
-              </div>
-            </div>
-
-            <div class="mockup-card empty-card"></div>
-          </div>
-        </div>
-      </div>
+      <figure class="dashboard-photo">
+        <img
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+          alt="Computador mostrando un dashboard de analítica e inventario"
+        />
+      </figure>
     </div>
   </section>
 
@@ -85,19 +65,19 @@
       <article class="feature-card">
         <div class="feature-icon">📁</div>
         <h3>Adiós al caos de archivos</h3>
-        <p>Olvida la necesidad de revisar múltiples documentos en Excel para cruzar información. Centraliza todo tu catálogo en una única plataforma en la nube.</p>
+        <p>Centraliza tu catálogo en una única plataforma en la nube y evita depender de múltiples documentos de Excel.</p>
       </article>
 
       <article class="feature-card">
         <div class="feature-icon">⚡</div>
         <h3>Validación Automática</h3>
-        <p>Elimina los errores en registros manuales. Nuestro sistema valida entradas y salidas al instante, garantizando la exactitud de tus existencias.</p>
+        <p>Registra entradas y salidas con mayor precisión, reduciendo errores manuales y diferencias de inventario.</p>
       </article>
 
       <article class="feature-card">
         <div class="feature-icon">🎯</div>
         <h3>Decisiones Estratégicas</h3>
-        <p>Deja de comprar basándote en la intuición. Identifica productos de baja rotación y anticipa la demanda con analítica clara.</p>
+        <p>Identifica productos de baja rotación, puntos de reorden y tendencias para comprar con datos reales.</p>
       </article>
     </div>
   </section>
@@ -105,99 +85,375 @@
   <section class="ecosystem" id="ecosistema">
     <div class="info-header">
       <h2>Ecosistema StockClaro</h2>
-      <p>Interfaces limpias y profesionales. Toma el control absoluto de tus inventarios y transacciones.</p>
+      <p>Una vista integral para controlar productos, movimientos, alertas, proveedores y desempeño operativo.</p>
     </div>
 
-    <div class="layout-grid">
-      <article class="layout-card">
-        <h3><span>📊</span> Inventory Status</h3>
-        <p>Monitoreo en tiempo real con alertas proactivas de reabastecimiento.</p>
+    <div class="carousel-controls" aria-label="Vistas del sistema">
+      <button class="carousel-tab active" type="button" data-slide="0">Dashboard</button>
+      <button class="carousel-tab" type="button" data-slide="1">Inventario</button>
+      <button class="carousel-tab" type="button" data-slide="2">Movimientos</button>
+    </div>
 
-        <table class="dark-table">
-          <thead>
-            <tr>
-              <th>SKU</th>
-              <th>Disponible</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>REF-8012</td>
-              <td>340 und.</td>
-              <td><span class="tag-ok">Nivel Óptimo</span></td>
-            </tr>
-            <tr>
-              <td>REF-9920</td>
-              <td>12 und.</td>
-              <td><span class="tag-alert">Punto de Reorden</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
+    <div class="ecosystem-carousel">
+      <button class="carousel-arrow prev" type="button" aria-label="Vista anterior">‹</button>
 
-      <article class="layout-card">
-        <h3><span>🔄</span> Trazabilidad de Movimientos</h3>
-        <p>Auditoría completa de flujos de mercancía para evitar mermas operativas.</p>
+      <div class="carousel-track">
+        <article class="carousel-slide active">
+          <div class="system-preview">
+            <aside class="system-sidebar">
+              <div class="sidebar-logo">SC</div>
+              <nav>
+                <span class="active">Dashboard</span>
+                <span>Inventario</span>
+                <span>Movimientos</span>
+                <span>Proveedores</span>
+                <span>Reportes</span>
+              </nav>
+            </aside>
 
-        <table class="dark-table">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Operación</th>
-              <th>Impacto</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Hoy, 10:45 AM</td>
-              <td>Ingreso Proveedor</td>
-              <td class="positive">+150</td>
-            </tr>
-            <tr>
-              <td>Hoy, 09:12 AM</td>
-              <td>Despacho Local</td>
-              <td class="negative">-25</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
+            <div class="system-main">
+              <div class="system-topbar">
+                <div>
+                  <span class="eyebrow">Panel general</span>
+                  <h3>Resumen operativo</h3>
+                </div>
+                <button>Exportar</button>
+              </div>
+
+              <div class="metric-grid">
+                <div class="metric-card">
+                  <span>Productos activos</span>
+                  <strong>1.284</strong>
+                </div>
+                <div class="metric-card">
+                  <span>Stock crítico</span>
+                  <strong>18</strong>
+                </div>
+                <div class="metric-card">
+                  <span>Órdenes abiertas</span>
+                  <strong>42</strong>
+                </div>
+                <div class="metric-card">
+                  <span>Rotación mensual</span>
+                  <strong>73%</strong>
+                </div>
+              </div>
+
+              <div class="interface-grid">
+                <article class="interface-panel wide">
+                  <h4>Inventario por categoría</h4>
+                  <div class="chart-bars">
+                    <span style="height: 45%"></span>
+                    <span style="height: 75%"></span>
+                    <span style="height: 58%"></span>
+                    <span style="height: 88%"></span>
+                    <span style="height: 62%"></span>
+                    <span style="height: 70%"></span>
+                  </div>
+                </article>
+
+                <article class="interface-panel">
+                  <h4>Alertas</h4>
+                  <div class="alert-list">
+                    <span>REF-9920 bajo mínimo</span>
+                    <span>Proveedor pendiente</span>
+                    <span>Ingreso sin validar</span>
+                  </div>
+                </article>
+
+                <article class="interface-panel table-panel">
+                  <h4>Productos recientes</h4>
+                  <table class="dark-table">
+                    <thead>
+                      <tr>
+                        <th>SKU</th>
+                        <th>Disponible</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>REF-8012</td>
+                        <td>340 und.</td>
+                        <td><span class="tag-ok">Óptimo</span></td>
+                      </tr>
+                      <tr>
+                        <td>REF-9920</td>
+                        <td>12 und.</td>
+                        <td><span class="tag-alert">Reorden</span></td>
+                      </tr>
+                      <tr>
+                        <td>REF-1044</td>
+                        <td>87 und.</td>
+                        <td><span class="tag-ok">Óptimo</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </article>
+
+                <article class="interface-panel">
+                  <h4>Movimientos</h4>
+                  <div class="movement-list">
+                    <div>
+                      <span>Ingreso proveedor</span>
+                      <strong class="positive">+150</strong>
+                    </div>
+                    <div>
+                      <span>Despacho local</span>
+                      <strong class="negative">-25</strong>
+                    </div>
+                    <div>
+                      <span>Ajuste inventario</span>
+                      <strong>+8</strong>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="carousel-slide">
+          <div class="system-preview">
+            <aside class="system-sidebar">
+              <div class="sidebar-logo">SC</div>
+              <nav>
+                <span>Dashboard</span>
+                <span class="active">Inventario</span>
+                <span>Movimientos</span>
+                <span>Proveedores</span>
+                <span>Reportes</span>
+              </nav>
+            </aside>
+
+            <div class="system-main">
+              <div class="system-topbar">
+                <div>
+                  <span class="eyebrow">Catálogo centralizado</span>
+                  <h3>Inventario maestro</h3>
+                </div>
+                <button>Nuevo producto</button>
+              </div>
+
+              <div class="inventory-toolbar">
+                <span>Buscar por SKU, nombre o categoría</span>
+                <strong>1.284 registros</strong>
+              </div>
+
+              <div class="inventory-layout">
+                <article class="interface-panel table-panel inventory-table">
+                  <h4>Listado de productos</h4>
+                  <table class="dark-table">
+                    <thead>
+                      <tr>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Stock</th>
+                        <th>Ubicación</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Empaque premium</td>
+                        <td>Insumos</td>
+                        <td>340</td>
+                        <td>Bodega A</td>
+                      </tr>
+                      <tr>
+                        <td>Botella 500 ml</td>
+                        <td>Envases</td>
+                        <td>92</td>
+                        <td>Bodega B</td>
+                      </tr>
+                      <tr>
+                        <td>Etiqueta frontal</td>
+                        <td>Marketing</td>
+                        <td>18</td>
+                        <td>Bodega A</td>
+                      </tr>
+                      <tr>
+                        <td>Caja despacho</td>
+                        <td>Logística</td>
+                        <td>510</td>
+                        <td>Bodega C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </article>
+
+                <aside class="interface-panel product-detail">
+                  <h4>Detalle rápido</h4>
+                  <div class="detail-box">
+                    <span>REF-9920</span>
+                    <strong>Etiqueta frontal</strong>
+                    <p>Stock actual por debajo del mínimo configurado.</p>
+                  </div>
+                  <div class="stock-meter">
+                    <span style="width: 28%"></span>
+                  </div>
+                  <button>Crear orden de compra</button>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="carousel-slide">
+          <div class="system-preview">
+            <aside class="system-sidebar">
+              <div class="sidebar-logo">SC</div>
+              <nav>
+                <span>Dashboard</span>
+                <span>Inventario</span>
+                <span class="active">Movimientos</span>
+                <span>Proveedores</span>
+                <span>Reportes</span>
+              </nav>
+            </aside>
+
+            <div class="system-main">
+              <div class="system-topbar">
+                <div>
+                  <span class="eyebrow">Trazabilidad completa</span>
+                  <h3>Movimientos recientes</h3>
+                </div>
+                <button>Registrar movimiento</button>
+              </div>
+
+              <div class="movement-board">
+                <article class="interface-panel">
+                  <h4>Entradas</h4>
+                  <div class="movement-list">
+                    <div>
+                      <span>Proveedor Norte</span>
+                      <strong class="positive">+240</strong>
+                    </div>
+                    <div>
+                      <span>Compra directa</span>
+                      <strong class="positive">+80</strong>
+                    </div>
+                    <div>
+                      <span>Devolución cliente</span>
+                      <strong class="positive">+12</strong>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="interface-panel">
+                  <h4>Salidas</h4>
+                  <div class="movement-list">
+                    <div>
+                      <span>Despacho Medellín</span>
+                      <strong class="negative">-64</strong>
+                    </div>
+                    <div>
+                      <span>Venta mostrador</span>
+                      <strong class="negative">-28</strong>
+                    </div>
+                    <div>
+                      <span>Ajuste por merma</span>
+                      <strong class="negative">-6</strong>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="interface-panel wide">
+                  <h4>Línea de actividad</h4>
+                  <div class="timeline">
+                    <div>
+                      <span></span>
+                      <p><strong>10:45 AM</strong> Ingreso proveedor registrado por Mariana.</p>
+                    </div>
+                    <div>
+                      <span></span>
+                      <p><strong>09:12 AM</strong> Despacho local validado por operaciones.</p>
+                    </div>
+                    <div>
+                      <span></span>
+                      <p><strong>08:30 AM</strong> Alerta de reorden generada automáticamente.</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <button class="carousel-arrow next" type="button" aria-label="Vista siguiente">›</button>
     </div>
   </section>
 
   <section class="expertos" id="expertos">
     <div class="info-header">
       <h2>Respaldado por Expertos</h2>
-      <p>Conoce al equipo detrás del código y la estrategia de StockClaro.</p>
+      <p>Conoce al equipo detrás del análisis, la estrategia y la operación de StockClaro.</p>
     </div>
 
     <div class="expert-grid">
       <article class="expert-card">
-        <div class="avatar-circle bg-mariana">MP</div>
+        <img class="expert-photo" src="./MARIANA.jpeg" alt="Foto de Mariana Pineda">
         <h3>Mariana Pineda</h3>
-        <p class="role">Data Analyst & Web Developer</p>
-        <p class="bio">Especialista en estructurar datos complejos y convertirlos en interfaces web ágiles y precisas para la toma de decisiones.</p>
+        <p class="role">Desarrolladora y Analista</p>
+        <p class="bio">Especialista en estructurar datos complejos y convertirlos en información clara para la toma de decisiones. Diseño de interfaces intuitivos, enfocados en la usabilidad y la claridad visual.</p>
       </article>
 
       <article class="expert-card">
         <div class="avatar-circle bg-miguel">MM</div>
         <h3>Miguel Mosalve</h3>
         <p class="role">Especialista en Operaciones</p>
-        <p class="bio">Experto en logística y procesos empresariales, encargado de garantizar que la plataforma resuelva los problemas reales del día a día.</p>
+        <p class="bio">Experto en logística y procesos empresariales, encargado de garantizar que la plataforma resuelva problemas reales del día a día.</p>
       </article>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-logo">
-      <img src="image_1c99f2.jpg" alt="StockClaro" />
+  <section class="plans-section" id="planes">
+    <div class="info-header">
+      <h2>Planes para empezar con claridad</h2>
+      <p>Implementa StockClaro según el tamaño de tu operación y el nivel de acompañamiento que necesitas.</p>
     </div>
 
-    <div class="footer-text">
-      &copy; 2026 StockClaro. Excelencia en gestión de inventarios.
+    <div class="plans-grid">
+      <article class="plan-card" tabindex="0">
+        <h3>Inicial</h3>
+        <p>Para negocios que quieren ordenar su inventario y dejar atrás archivos dispersos.</p>
+        <strong>Diagnóstico + estructura base</strong>
+      </article>
+
+      <article class="plan-card selected" tabindex="0">
+        <h3>Operativo</h3>
+        <p>Para empresas que necesitan control de entradas, salidas, alertas y reportes frecuentes.</p>
+        <strong>Inventario + movimientos + alertas</strong>
+      </article>
+
+      <article class="plan-card" tabindex="0">
+        <h3>Avanzado</h3>
+        <p>Para equipos que buscan analítica, trazabilidad y seguimiento detallado de desempeño.</p>
+        <strong>Dashboard + analítica + soporte</strong>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="./image_1c99f2.jpg" alt="StockClaro" />
+      <p>Inventarios claros, decisiones seguras y operaciones bajo control.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#ecosistema">Ecosistema</a>
+      <a href="#expertos">Creadores</a>
+      <a href="#planes">Planes</a>
+    </div>
+
+    <div class="footer-contact">
+      <strong>Agenda una consultoría</strong>
+      <a href="https://wa.me/tunumero">WhatsApp</a>
+      <span>© 2026 StockClaro</span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
