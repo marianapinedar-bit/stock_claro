@@ -1,236 +1,203 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockClaro | Gestión de Inventarios de Alto Nivel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1a5fb4;
-            --accent: #10b981;
-            --dark: #0f172a;
-            --light-slate: #f8fafc;
-            --border: rgba(226, 232, 240, 0.8);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockClaro | Gestión de Inventarios de Alto Nivel</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #ffffff;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-
-        /* --- Navegación --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .logo img { height: 50px; }
-
-        .btn-cta {
-            background: var(--primary);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding: 160px 8% 100px;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            background: radial-gradient(circle at 90% 10%, #eef6ff 0%, #ffffff 50%);
-        }
-
-        .hero-content { flex: 1; }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 24px;
-            color: var(--dark);
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: #475569;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        /* --- Visual & Elegance --- */
-        .hero-visual { flex: 1; position: relative; }
-
-        .dashboard-preview {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 40px 80px -15px rgba(15, 23, 42, 0.15);
-            border: 1px solid var(--border);
-        }
-
-        /* Badge de Ahorro Elegante */
-        .saving-badge {
-            position: absolute;
-            top: -25px;
-            right: -10px;
-            background: white;
-            padding: 16px 24px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .saving-badge span { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
-
-        /* --- Sección: Aliviar Frustraciones --- */
-        .solutions {
-            padding: 100px 8%;
-            background: var(--light-slate);
-        }
-
-        .solutions-header { text-align: center; margin-bottom: 70px; }
-        .solutions-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .solution-card {
-            background: white;
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            transition: all 0.4s ease;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-            border-color: var(--primary);
-        }
-
-        .icon-box {
-            width: 48px;
-            height: 48px;
-            background: #eff6ff;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            color: var(--primary);
-        }
-
-        .status-pill {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        .pill-alivio { background: #dcfce7; color: #166534; }
-
-        .solution-card h3 { margin-bottom: 12px; font-size: 1.25rem; }
-        .solution-card p { color: #64748b; font-size: 0.95rem; }
-
-        @media (max-width: 968px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 120px; }
-            .solutions-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-    <nav>
-        <div class="logo">
-            <img src="image_1c99f2.jpg" alt="StockClaro Logo">
-        </div>
-        <div class="nav-links">
-            <a href="https://wa.me/tu-numero" class="btn-cta">Hablar con un experto</a>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="image_1c99f2.jpg" alt="StockClaro Logo" />
+    </div>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Controla tu inventario con información clara y confiable</h1>
-            <p>Deja atrás el caos de los registros manuales. Visualiza tu stock en tiempo real y optimiza cada compra con datos precisos.</p>
-            <a href="#soluciones" class="btn-cta" style="padding: 18px 36px; font-size: 1rem;">Explorar Solución</a>
+    <div class="nav-links">
+      <a href="#soluciones">Soluciones</a>
+      <a href="#ecosistema">Ecosistema</a>
+      <a href="#expertos">Creadores</a>
+      <a href="#planes">Planes</a>
+      <a href="https://wa.me/tunumero" class="btn-nav">Agendar Consultoría</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content animate-fade-up">
+      <h1>Controla tu inventario con información clara, actualizada y confiable</h1>
+      <p>Organiza tus productos en un solo lugar, conoce tu stock en tiempo real y toma decisiones de compra más seguras.</p>
+
+      <a href="https://wa.me/tunumero" class="btn-hero">
+        Hablar con un experto <span>→</span>
+      </a>
+    </div>
+
+    <div class="hero-visual animate-fade-up delay-2">
+      <div class="badge-ahorro animate-fade-up delay-3">
+        <div class="badge-icon">📉</div>
+        <div class="badge-text">
+          <strong>Optimización Detectada</strong>
+          <span>Reducción de costos operativos +18%</span>
+        </div>
+      </div>
+
+      <div class="browser-mockup">
+        <div class="browser-header">
+          <div class="browser-dot"></div>
+          <div class="browser-dot"></div>
+          <div class="browser-dot"></div>
         </div>
 
-        <div class="hero-visual">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="dashboard-preview" alt="Dashboard StockClaro">
-            
-            <div class="saving-badge">
-                <div class="icon-box" style="margin:0; width:32px; height:32px;">📈</div>
-                <div>
-                    <p style="font-size: 0.7rem; color: #64748b; margin:0;">EFICIENCIA LOGÍSTICA</p>
-                    <span>+90% Detectado</span>
-                </div>
+        <div class="browser-body">
+          <div class="mockup-card mockup-summary">
+            <div class="mockup-line small"></div>
+            <div class="mockup-line primary"></div>
+          </div>
+
+          <div class="mockup-grid">
+            <div class="mockup-card chart-card">
+              <div class="bar-chart">
+                <div class="bar accent"></div>
+                <div class="bar primary"></div>
+                <div class="bar slate"></div>
+              </div>
             </div>
+
+            <div class="mockup-card empty-card"></div>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <section class="solutions" id="soluciones">
-        <div class="solutions-header">
-            <span style="color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">Propuesta de Valor</span>
-            <h2>Adiós al error manual, hola a la precisión</h2>
-        </div>
+  <section class="info-section" id="soluciones">
+    <div class="info-header">
+      <h2>Evoluciona tu forma de gestionar</h2>
+      <p>Sabemos que llevar el control en Excel genera errores y falta de visibilidad. StockClaro automatiza tu operación para que decidas con datos reales.</p>
+    </div>
 
-        <div class="solutions-grid">
-            <div class="solution-card">
-                <div class="status-pill pill-alivio">Aliviador de Frustración</div>
-                <div class="icon-box">📊</div>
-                <h3>Adiós al Excel Caótico</h3>
-                <p>Centralizamos tus entradas y salidas en una interfaz intuitiva. Un solo lugar, toda la verdad.</p>
-            </div>
+    <div class="features-grid">
+      <article class="feature-card">
+        <div class="feature-icon">📁</div>
+        <h3>Adiós al caos de archivos</h3>
+        <p>Olvida la necesidad de revisar múltiples documentos en Excel para cruzar información. Centraliza todo tu catálogo en una única plataforma en la nube.</p>
+      </article>
 
-            <div class="solution-card">
-                <div class="status-pill pill-alivio">Aliviador de Frustración</div>
-                <div class="icon-box">⚡</div>
-                <h3>Visibilidad en Tiempo Real</h3>
-                <p>Olvídate de revisar múltiples archivos. Tu stock se actualiza al instante con cada movimiento.</p>
-            </div>
+      <article class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Validación Automática</h3>
+        <p>Elimina los errores en registros manuales. Nuestro sistema valida entradas y salidas al instante, garantizando la exactitud de tus existencias.</p>
+      </article>
 
-            <div class="solution-card">
-                <div class="status-pill pill-alivio">Aliviador de Frustración</div>
-                <div class="icon-box">🛡️</div>
-                <h3>Validación Automática</h3>
-                <p>Elimina el 100% de los errores de digitación manual con nuestro sistema de verificación inteligente.</p>
-            </div>
-        </div>
-    </section>
+      <article class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Decisiones Estratégicas</h3>
+        <p>Deja de comprar basándote en la intuición. Identifica productos de baja rotación y anticipa la demanda con analítica clara.</p>
+      </article>
+    </div>
+  </section>
 
-    <footer style="text-align: center; padding: 60px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid var(--border);">
-        &copy; 2026 StockClaro — Tu inventario bajo control.
-    </footer>
+  <section class="ecosystem" id="ecosistema">
+    <div class="info-header">
+      <h2>Ecosistema StockClaro</h2>
+      <p>Interfaces limpias y profesionales. Toma el control absoluto de tus inventarios y transacciones.</p>
+    </div>
 
+    <div class="layout-grid">
+      <article class="layout-card">
+        <h3><span>📊</span> Inventory Status</h3>
+        <p>Monitoreo en tiempo real con alertas proactivas de reabastecimiento.</p>
+
+        <table class="dark-table">
+          <thead>
+            <tr>
+              <th>SKU</th>
+              <th>Disponible</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>REF-8012</td>
+              <td>340 und.</td>
+              <td><span class="tag-ok">Nivel Óptimo</span></td>
+            </tr>
+            <tr>
+              <td>REF-9920</td>
+              <td>12 und.</td>
+              <td><span class="tag-alert">Punto de Reorden</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="layout-card">
+        <h3><span>🔄</span> Trazabilidad de Movimientos</h3>
+        <p>Auditoría completa de flujos de mercancía para evitar mermas operativas.</p>
+
+        <table class="dark-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Operación</th>
+              <th>Impacto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hoy, 10:45 AM</td>
+              <td>Ingreso Proveedor</td>
+              <td class="positive">+150</td>
+            </tr>
+            <tr>
+              <td>Hoy, 09:12 AM</td>
+              <td>Despacho Local</td>
+              <td class="negative">-25</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+  </section>
+
+  <section class="expertos" id="expertos">
+    <div class="info-header">
+      <h2>Respaldado por Expertos</h2>
+      <p>Conoce al equipo detrás del código y la estrategia de StockClaro.</p>
+    </div>
+
+    <div class="expert-grid">
+      <article class="expert-card">
+        <div class="avatar-circle bg-mariana">MP</div>
+        <h3>Mariana Pineda</h3>
+        <p class="role">Data Analyst & Web Developer</p>
+        <p class="bio">Especialista en estructurar datos complejos y convertirlos en interfaces web ágiles y precisas para la toma de decisiones.</p>
+      </article>
+
+      <article class="expert-card">
+        <div class="avatar-circle bg-miguel">MM</div>
+        <h3>Miguel Mosalve</h3>
+        <p class="role">Especialista en Operaciones</p>
+        <p class="bio">Experto en logística y procesos empresariales, encargado de garantizar que la plataforma resuelva los problemas reales del día a día.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="image_1c99f2.jpg" alt="StockClaro" />
+    </div>
+
+    <div class="footer-text">
+      &copy; 2026 StockClaro. Excelencia en gestión de inventarios.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
